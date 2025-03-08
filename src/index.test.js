@@ -3,6 +3,7 @@ import {
   reverseString,
   calculator,
   caesarCipher,
+  analyzeArray,
 } from "./index.js";
 
 test("first letter of string is capitalized", () => {
@@ -43,4 +44,31 @@ test("caesarCipher wrapping from z to a", () => {
 
 test("caesarCipher to preserve punctuation, spaces and other non alphabetical characters", () => {
   expect(caesarCipher("Hello, World!", 3)).toBe("Khoor, Zruog!");
+});
+
+test("analyzeArray to compute array of positive integers", () => {
+  expect(analyzeArray([1, 8, 3, 4, 2, 6])).toEqual({
+    average: 4,
+    min: 1,
+    max: 8,
+    length: 6,
+  });
+});
+
+test("analyzeArray to compute array of negative integers", () => {
+  expect(analyzeArray([-1, -8, -3, -4, -2, -6])).toEqual({
+    average: -4,
+    min: -8,
+    max: -1,
+    length: 6,
+  });
+});
+
+test("analyzeArray to compute array of floating values", () => {
+  expect(analyzeArray([-1.5, -7.5, -3, -4, -2])).toEqual({
+    average: -3.6,
+    min: -7.5,
+    max: -1.5,
+    length: 5,
+  });
 });
