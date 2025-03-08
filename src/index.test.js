@@ -1,4 +1,4 @@
-import { capitalize } from "./index.js";
+import { capitalize, reverseString } from "./index.js";
 
 test("first letter of string is capitalized", () => {
   expect(capitalize("string")).toBe("String");
